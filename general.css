@@ -1,0 +1,35 @@
+body {
+    background-color: #DAF7A6;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    font-family:'Times New Roman';
+}
+
+h3 {
+    font-family:'Times New Roman';
+}
+
+p {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+
+
+#note {
+    color: #fb2525;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#leaderboard {
+    text-align: center;
+}
+
+#mainbody {
+    width: 800px;
+    margin: 0 auto;
+}
