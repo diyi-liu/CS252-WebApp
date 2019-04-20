@@ -10,8 +10,12 @@ div {
   right: 10px;
 }
 
+#page-title {
+  text-align: center;
+}
+
 #searchable-header {
-  background-image: url('images/search.png');
+  background-image: url('../images/search.png');
   background-position: 5px 5px;
   background-size: 20px 20px;
   background-repeat: no-repeat; 
