@@ -1,35 +1,44 @@
 body {
-    background-color: #DAF7A6;
 }
 
 h1 {
-    font-size: 60px;
-    text-align: center;
-    font-family:'Times New Roman';
+  font-size: 60px;
+  text-align: center;
+  font-family:'Times New Roman';
 }
 
 h3 {
-    font-family:'Times New Roman';
+  font-family:'Times New Roman';
 }
 
 p {
-    font-size: 15px;
-    font-weight: normal;
+  font-size: 15px;
+  font-weight: normal;
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%; 
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+}
 
 
 #note {
-    color: #fb2525;
-    text-align: center;
-    text-decoration: underline;
+  color: #fb2525;
+  text-align: center;
+  text-decoration: underline;
 }
 
 #leaderboard {
-    text-align: center;
+  text-align: center;
 }
 
 #mainbody {
-    width: 800px;
-    margin: 0 auto;
+  width: 800px;
+  margin: 0 auto;
 }
