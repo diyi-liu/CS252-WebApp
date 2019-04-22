@@ -10,8 +10,8 @@ if ($result->num_rows !== 0 ) {
 	die('User exists. Please choose another username');
 } else {
 	$stmt->close();
-	$stmt = $db->prepare('INSERT INTO 'users' ('uid', 'username', 'password') VALUES (NULL, ?, ?, ?);');
-	$stmt->bind_param('ss', $_POST ['username'], $_POST ['password'], $_POST['email']);
+	$stmt = $db->prepare("INSERT INTO 'users' ('uid', 'username', 'password', 'email') VALUES (NULL, ?, ?, ?);");
+	$stmt->bind_param('sss', $_POST ['username'], $_POST ['password'], $_POST['email']);
 	$stmt->execute();
 	$stmt->close();
 	$stmt = $db->prepare('SELECT uid FROM users WHERE username = ? AND password = ? LIMIT 1');
