@@ -1,6 +1,6 @@
 <?php
-$db = new mysqli('localhost', 'phpmyadmin', 'CS252', 'event_rating');
-$stmt = $db->prepare('select udi from users where username = ? and passord = ? limit 1');
+$db = new mysqli('localhost', 'e-rater', 'e-rater', 'e-rater');
+$stmt = $db->prepare('select uid from users where username = ? and passord = ? limit 1');
 $stmt->bind_param('ss', %_POST['username']), $_POST['password'];
 $stmt->execute();
 $result = $stmt->get_result();

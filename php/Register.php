@@ -1,5 +1,5 @@
 <?php
-$db = new mysqli('localhost', 'phpmyadmin', 'CS252', 'event_rating');
+$db = new mysqli('localhost', 'e-rater', 'e-rater', 'e-rater');
 $stmt = $db->prepare('select uid from users where username = ? limit 1');
 $stmt->bind_param('s', $_POST['username']);
 $stmt->execute();
@@ -10,8 +10,8 @@ if ($result->num_rows !== 0 ) {
 	die('User exists. Please choose another username');
 } else {
 	$stmt->close();
-	$stmt = $db->prepare('INSERT INTO 'users' ('uid', 'username', 'password') VALUES (NULL, ?, ?);');
-	$stmt->bind_param('ss', $_POST ['username'], $_POST ['password']);
+	$stmt = $db->prepare('INSERT INTO 'users' ('uid', 'username', 'password') VALUES (NULL, ?, ?, ?);');
+	$stmt->bind_param('ss', $_POST ['username'], $_POST ['password'], $_POST['email']);
 	$stmt->execute();
 	$stmt->close();
 	$stmt = $db->prepare('SELECT uid FROM users WHERE username = ? AND password = ? LIMIT 1');
