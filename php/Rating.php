@@ -15,12 +15,8 @@ if ($result->num_rows !== 0 ) {
 	// Update the rating
 	$stmt->close();
 	$stmt = $db->prepare('UPDATE `events` SET `rating` = ? WHERE `events`.`uid` = ? and `events`.`ename` = ?');
-// <<<<<<< HEAD
-// 	$stmt->bind_param('iis', $_POST['rating'], $_SESSION['id'], $_POST['ename']);
-// =======
 	session_start();
 	$stmt->bind_param('dis', $_POST['rating'], $_SESSION['id'], $_POST['ename']);
-// >>>>>>> e455f3baf2fd1a274011f69b1147082ba1d565ea
 	$stmt->execute();
 	$stmt->close();
 	echo 'update';
