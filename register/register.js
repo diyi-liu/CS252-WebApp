@@ -7,7 +7,7 @@ $(function () {
             if (data === 'ok') {
                 window.location.href = '../login/login.html';
             } else {
-                alert(data);
+                alert('Username in use');
             }
         });
     });
