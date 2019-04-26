@@ -1,5 +1,9 @@
 <?php
-$db = new mysqli('localhost', 'e-rater', 'e-rater', 'e-rater');
+/*$_POST['username'] = 'aaa';
+$_POST['password'] = 'bbb';
+$_POST['email'] = 'aaa@bbb.com';
+*/
+$db = new mysqli('e-rater.diyi-liu.com', 'e-rater', 'e-rater', 'e-rater');
 $stmt = $db->prepare('select uid from users where username = ? limit 1');
 $stmt->bind_param('s', $_POST['username']);
 $stmt->execute();
@@ -10,7 +14,7 @@ if ($result->num_rows !== 0 ) {
 	die('User exists. Please choose another username');
 } else {
 	$stmt->close();
-	$stmt = $db->prepare("INSERT INTO 'users' ('uid', 'username', 'password', 'email') VALUES (NULL, ?, ?, ?);");
+	$stmt = $db->prepare("INSERT INTO `users` (`uid`, `username`, `password`, `email`) VALUES (NULL, ?, ?, ?);");
 	$stmt->bind_param('sss', $_POST ['username'], $_POST ['password'], $_POST['email']);
 	$stmt->execute();
 	$stmt->close();
