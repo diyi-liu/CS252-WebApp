@@ -19,6 +19,7 @@ if ($result->num_rows !== 0 ) {
 } else {
 	$stmt->close();
 	$stmt = $db->prepare("INSERT INTO `events` (`e_id`, `ename`, `rating`, `uid`) VALUES (NULL, ?, ?, ?)");
+	session_start();
 	$stmt->bind_param('sdi', $_POST ['ename'], $_POST ['rating'], $_SESSION['id']);
 	$stmt->execute();
 	$stmt->close();
