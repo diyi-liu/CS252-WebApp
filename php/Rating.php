@@ -4,8 +4,6 @@ $db = new mysqli('e-rater.diyi-liu.com', 'e-rater', 'e-rater', 'e-rater');
 // check if this user has a rating on the event already
 $stmt = $db->prepare("SELECT uid FROM events WHERE uid = ? AND ename = ?");
 session_start();
-print_r($_POST)
-print_r($_SESSION);
 $stmt->bind_param('is', $_SESSION['id'], $_POST['ename']);
 $stmt->execute();
 $result = $stmt->get_result();
