@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Purdue: 150 Years of Giant Leaps</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="CERIAS.css">
+    <script src="../lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="index.js"></script>
+    <script type="text/javascript" src="../tableSort.js"></script>
+</head>
+<body>
+  <div>
+    <h1><a href="../index.html" id="home">Purdue Event Rater</a></h1>
+  </div>
+
+  <div id="login-box">
+    <a href="login/login.html">Sign in</a>
+    <a href="register/signup.html"> Sign Up</a>
+  </div>
+
+  <div id="page-title">
+    <h2>CERIAS Events</h2>
+  </div>
+
+  <div class="searchsort-table">
+    <input type="text" class="search" id="searchable-header" onkeyup="myFunction()" placeholder="Search Event...">
+
+    <table class="searchable sortable">
+      <colgroup>
+        <col style="width: 350px;">
+        <col style="width: 150px;">
+        <col style="width: 300px;">
+        <col style="width: 200px;">
+        <col style="width: 200px;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Event Name</th>
+          <th>Speaker</th>
+          <th>Location</th>
+          <th>Date</th>
+          <th>Current Rating (Out of 10)</th>
+          <th>My Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://calendar.purdue.edu/calendar/EventList.aspx?view=EventDetails&eventidn=103546&information_id=192679">CERIAS 2019 Security Symposium</a></td>
+          <td>N/A</td>
+          <td>Purdue Memorial Union</td>
+          <td>April 9th - 10th, 2019</td>
+          <td>5</td>
+          <td><input type="text" id="user_rating" placeholder="Integers Only"></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="../new_event/add.html">Request to add a new Event</a></p>
+  </div>
+</body>
+</html>
