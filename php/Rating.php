@@ -9,7 +9,7 @@ $result = $stmt->get_result();
 if ($result->num_rows !== 0 ) {
 	// Update the rating
 	$stmt->close();
-	$stmt = $db->prepare("UPDATE `events` SET `rating` = ? WHERE `events`.`e_id` = ?;");
+	$stmt = $db->prepare("UPDATE `events` SET `rating` = ? WHERE `events`.`uid` = ?;");
 	session_start();
 	$stmt->bind_param('ss', $_POST['rating'], $_SESSION['id']);
 	$stmt->execute();
