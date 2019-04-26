@@ -1,6 +1,5 @@
 'use strict';
 
-
 $(function () {
 	$('#login_form').submit(function (submitEvent) {
 		submitEvent.preventDefault();
