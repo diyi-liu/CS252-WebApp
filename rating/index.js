@@ -1,4 +1,4 @@
-$(function () {
+$(function getEventName() {
 
     function findGetParameter(parameterName) {
         var result = null,
@@ -17,7 +17,7 @@ $(function () {
     $('#title').text(param);
 });
 
-$(function () {
+$(function updateRating() {
     $('#inputs').submit(function (submitEvent) {
         submitEvent.preventDefault();
         $.post('../php/Rating.php', $(this).serialize(), function(data) {
