@@ -9,15 +9,15 @@ $result = $stmt->get_result();
 if ($result->num_rows !== 0 ) {
 	// Update the rating
 	$stmt->close();
-	$stmt = $db->prepare("UPDATE `events` SET `rating` = ? WHERE `events`.`uid` = ?;");
+	$stmt = $db->prepare('UPDATE `events` SET `rating` = ? WHERE `events`.`uid` = ? and `events`.`ename` = ?');
 	session_start();
-	$stmt->bind_param('ss', $_POST['rating'], $_SESSION['id']);
+	$stmt->bind_param('ss', $_POST['rating'], $_SESSION['id'], $_POST['ename']);
 	$stmt->execute();
 	$stmt->close();
 	echo 'update';
 } else {
 	$stmt->close();
-	$stmt = $db->prepare("INSERT INTO `events` (`e_id`, `ename`, `rating`, `uid`, `s_id`) VALUES ('NULL', ?, ?, ?, NULL);");
+	$stmt = $db->prepare('INSERT INTO `events` (`e_id`, `ename`, `rating`, `uid`, `s_id`) VALUES ('NULL', ?, ?, ?, NULL)');
 	$stmt->bind_param('sss', $_POST ['ename'], $_POST ['rating'], $_SESSION['id']);
 	$stmt->execute();
 	$stmt->close();
