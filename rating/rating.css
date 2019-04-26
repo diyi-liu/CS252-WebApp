@@ -1,0 +1,12 @@
+#page-title {
+  margin: auto;
+  text-align: center;
+}
+
+#inputs {
+	padding-top: 250; 
+  display: block;
+  margin: auto;
+  text-align: center;
+  height: 100%;
+}
