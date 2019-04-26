@@ -17,7 +17,7 @@ if ($result->num_rows !== 0 ) {
 	echo 'update';
 } else {
 	$stmt->close();
-	$stmt = $db->prepare('INSERT INTO `events` (`e_id`, `ename`, `rating`, `uid`, `s_id`) VALUES ('NULL', ?, ?, ?, NULL)');
+	$stmt = $db->prepare("INSERT INTO `events` (`e_id`, `ename`, `rating`, `uid`, `s_id`) VALUES (NULL, ?, ?, ?, NULL)");
 	$stmt->bind_param('sss', $_POST ['ename'], $_POST ['rating'], $_SESSION['id']);
 	$stmt->execute();
 	$stmt->close();
