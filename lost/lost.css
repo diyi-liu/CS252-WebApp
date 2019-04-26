@@ -16,7 +16,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     background: transparent;
 }
 body {
-    background: #DCDDDF url(https://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
+    background-color: #CEB888;
     color: #000;
     font: 14px Arial;
     margin: 0 auto;
@@ -48,7 +48,7 @@ form:after {
 }
 
 .container {
-    padding-top: 450px;
+    padding-top: 200px;
 }
 
 .container { margin: 25px auto; position: relative; width: 900px; }
