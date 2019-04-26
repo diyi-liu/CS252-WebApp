@@ -18,9 +18,10 @@ $(function() {
 
     $('#rating-btn').click(function() {
         $.post('../php/Rating.php', {
+            ename: param,
             rating: $('#user-rating')[0].value
         }, function(data) {
-            console.log(data)
+            console.log(data);
             if(data === 'add') {
                 alert('Rating added successfully!');
                 window.location.href = '../index.html';
