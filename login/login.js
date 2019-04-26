@@ -5,7 +5,7 @@ $(function () {
 		submitEvent.preventDefault();
 		$.post('../php/Login.php', $(this).serialize(), function(data) {
 			if(data === 'pass') {
-				window.location.herf = '../index.html';
+				window.location.href = '../index.html';
 			} else {
 				alert('Invalid username/password');
 			}
