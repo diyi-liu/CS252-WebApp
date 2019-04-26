@@ -11,17 +11,16 @@ if ($result->num_rows !== 0 ) {
 	$stmt->close();
 	$stmt = $db->prepare("UPDATE `events` SET `rating` = ? WHERE `events`.`e_id` = ?;");
 	session_start();
-	$stmt->bind_param('ss', $_POST['rating'] $_SESSION['id']);
+	$stmt->bind_param('ss', $_POST['rating'], $_SESSION['id']);
 	$stmt->execute();
 	$stmt->close();
-	echo 'ok';
+	echo 'update';
 } else {
 	$stmt->close();
 	$stmt = $db->prepare("INSERT INTO `events` (`e_id`, `ename`, `rating`, `uid`, `s_id`) VALUES ('NULL', ?, ?, ?, NULL);");
-	session_start();
 	$stmt->bind_param('sss', $_POST ['ename'], $_POST ['rating'], $_SESSION['id']);
 	$stmt->execute();
 	$stmt->close();
-	echo 'ok';
+	echo 'add';
 }
 ?>
