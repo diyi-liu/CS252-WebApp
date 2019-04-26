@@ -20,6 +20,7 @@ $(function() {
         $.post('../php/Rating.php', {
             rating: $('#user-rating')[0].value
         }, function(data) {
+            console.log(data)
             if(data === 'add') {
                 alert('Rating added successfully!');
                 window.location.href = '../index.html';
