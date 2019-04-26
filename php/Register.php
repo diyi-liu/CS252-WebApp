@@ -31,4 +31,5 @@ if ($result->num_rows !== 0 ) {
 	$db->close();
 	echo 'ok';
 }
+$db->close();
 ?>
