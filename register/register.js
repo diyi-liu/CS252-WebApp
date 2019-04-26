@@ -5,7 +5,7 @@ $(function () {
         submitEvent.preventDefault();
         $.post('../php/Register.php', $(this).serialize(), function (data) {
             if (data === 'ok') {
-                window.location.href = '/index.html';
+                window.location.href = '../login/login.html';
             } else {
                 alert(data);
             }
