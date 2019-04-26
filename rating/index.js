@@ -1,4 +1,4 @@
-$(function getEventName() {
+$(function() {
 
     function findGetParameter(parameterName) {
         var result = null,
@@ -15,12 +15,11 @@ $(function getEventName() {
 
     let param = findGetParameter('name');
     $('#title').text(param);
-});
 
-$(function updateRating() {
-    $('#inputs').submit(function (submitEvent) {
-        submitEvent.preventDefault();
-        $.post('../php/Rating.php', $(this).serialize(), function(data) {
+    $('#rating-btn').click(function() {
+        $.post('../php/Rating.php', {
+            rating: $('#user-rating')[0].value
+        }, function(data) {
             if(data === 'add') {
                 alert('Rating added successfully!');
                 window.location.href = '../index.html';
