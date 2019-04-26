@@ -9,10 +9,18 @@
     <link rel="stylesheet" href="../general.css">
     <link rel="stylesheet" href="index.css">
     <script src="../lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="index.js"></script>
+    <script type="text/javascript" src="../tableSort.js"></script>
 </head>
 <body>
   <div>
     <h1><a href="../index.html" id="home">Purdue Event Rater</a></h1>
+  </div>
+
+  <div id="login-box">
+    <a href="login/login.html">Sign in</a>
+    <a href="register/signup.html"> Sign Up</a>
   </div>
 
   <div id="page-title">
@@ -28,6 +36,7 @@
         <col style="width: 150px;">
         <col style="width: 300px;">
         <col style="width: 200px;">
+        <col style="width: 200px;">
       </colgroup>
       <thead>
         <tr>
@@ -36,15 +45,25 @@
           <th>Location</th>
           <th>Date</th>
           <th>Current Rating (Out of 10)</th>
+          <th>My Rating</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><a href="sully.html">208 Seconds: A Lifetime of Lessons</a></td>
+          <td><a href="https://calendar.purdue.edu/calendar/EventList.aspx?view=EventDetails&eventidn=103463&information_id=191974">208 Seconds: A Lifetime of Lessons</a></td>
           <td>Captain Sully</td>
           <td>Elliot Hall of Music</td>
           <td>February 24th, 2019</td>
           <td>8.3</td>
+          <td><input type="text" id="user_rating" placeholder="Integers Only"></td>
+        </tr>
+        <tr>
+          <td><a href="https://calendar.purdue.edu/calendar/EventList.aspx?view=EventDetails&eventidn=103598&information_id=192725">Giant Leaps Series: Kong Kat Wong</a></td>
+          <td>Kong Kat Wong</td>
+          <td>Eliza Fowler Hall, Stewart Center</td>
+          <td>April 9th, 2019</td>
+          <td>8.0</td>
+          <td><input type="text" id="user_rating" placeholder="Integers Only"></td>
         </tr>
       </tbody>
     </table>
