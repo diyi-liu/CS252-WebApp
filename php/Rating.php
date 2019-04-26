@@ -12,14 +12,14 @@ if ($result->num_rows !== 0 ) {
 	$stmt->close();
 	$stmt = $db->prepare('UPDATE `events` SET `rating` = ? WHERE `events`.`uid` = ? and `events`.`ename` = ?');
 	session_start();
-	$stmt->bind_param('iis', $_POST['rating'], $_SESSION['id'], $_POST['ename']);
+	$stmt->bind_param('dis', $_POST['rating'], $_SESSION['id'], $_POST['ename']);
 	$stmt->execute();
 	$stmt->close();
 	echo 'update';
 } else {
 	$stmt->close();
-	$stmt = $db->prepare("INSERT INTO `events` (`e_id`, `ename`, `rating`, `uid`, `s_id`) VALUES (NULL, ?, ?, ?, NULL)");
-	$stmt->bind_param('sii', $_POST ['ename'], $_POST ['rating'], $_SESSION['id']);
+	$stmt = $db->prepare("INSERT INTO `events` (`e_id`, `ename`, `rating`, `uid`) VALUES (NULL, ?, ?, ?)");
+	$stmt->bind_param('sdi', $_POST ['ename'], $_POST ['rating'], $_SESSION['id']);
 	$stmt->execute();
 	$stmt->close();
 	echo 'add';
