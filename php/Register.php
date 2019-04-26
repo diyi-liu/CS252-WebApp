@@ -11,7 +11,7 @@ $result = $stmt->get_result();
 if ($result->num_rows !== 0 ) {
 	$stmt->close();
 	$db->close();
-	die('User exists. Please choose another username');
+	echo 'notok';
 } else {
 	$stmt->close();
 	$stmt = $db->prepare("INSERT INTO `users` (`uid`, `username`, `password`, `email`) VALUES (NULL, ?, ?, ?);");
